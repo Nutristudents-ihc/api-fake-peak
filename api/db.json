@@ -1,0 +1,19 @@
+{
+  "accounts": [
+    {
+      "id": 1,
+      "user": "user123",
+      "email": "user123@gmail.com",
+      "password": "contrasena123456"
+    },
+    {
+      "id": 2,
+      "user": "aksoonie",
+      "email": "aksoonie@gmail.com",
+      "pass": "asdjkasjdksadj12345"
+    }
+  ],
+  "posts": [],
+  "dietas": [],
+  "recetas": []
+}
