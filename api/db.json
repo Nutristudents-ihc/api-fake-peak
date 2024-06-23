@@ -14,6 +14,32 @@
     }
   ],
   "posts": [],
-  "dietas": [],
-  "recetas": []
+  "dietas": [
+    {
+      "sexo": "M",
+      "edad": 12,
+      "peso": 123,
+      "altura": 123,
+      "grasaCorporal": 12,
+      "tiposComida": [
+        "Carnes rojas",
+        "Tubérculos"
+      ],
+      "id": 1
+    },
+    {
+      "sexo": "F",
+      "edad": 19,
+      "peso": 40,
+      "altura": 123,
+      "grasaCorporal": 12,
+      "tiposComida": [
+        "Carnes rojas",
+        "Frutos secos"
+      ],
+      "id": 2
+    }
+  ],
+  "recetas": [],
+  "objetivos":[]
 }
