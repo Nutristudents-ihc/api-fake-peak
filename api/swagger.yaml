@@ -1,0 +1,376 @@
+openapi: 3.0.3
+info:
+  title: Swagger Peak 3.0
+  description: Descripcion de los endpoints de Peak. Nada más.
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: u202216148@upc.edu.pe
+    name: Administradores de Peak.
+    url: http://www.upc.edu.pe/
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.11
+  servers:
+  - url: http://localhost:3000/api/v1/
+  tags:
+  - name: Accounts
+    description: Operaciones de usuario
+  - name: Posts
+    description: Operaciones de publicaciones
+  - name: Recetas
+    description: Operaciones de recetas
+  - name: Objetivos
+    description: Operaciones de objetivos
+  paths:
+    /accounts:
+      get:
+        tags:
+        - Accounts
+        summary: Lista de cuentas
+        description: Lista de cuentas
+        operationId: listAccounts
+        responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Accounts'          
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Accounts'
+        '400':
+          description: Invalid status value
+      post:
+        tags:
+        - Accounts
+        summary: Crea una cuenta
+        description: Crea una cuenta
+        operationId: createAccount
+        requestBody:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Accounts'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Accounts'
+            application/x-www-form-urlencoded:
+              schema:
+                $ref: '#/components/schemas/Accounts'
+          required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Accounts'          
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Accounts'
+        '400':
+          description: Invalid input
+        '422':
+          description: Validation exception
+    /accounts/{user}:
+      get:
+        tags:
+        - Accounts
+        summary: Obteber una cuenta por user
+        description: Obtener una cuenta por user
+        operationID: getAcciuntUser
+        parameters:
+        - name: user
+          in: path
+          description: Username of account to return
+          required: true
+          schema: 
+            type: string
+          example: user123
+        responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Accounts'          
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Accounts'
+        '400':
+          description: Invalid user supplied
+        '404':
+          description: User not found
+      delete:
+        tags:
+        - Accounts
+        summary: Elimina una cuenta
+        description: Elimina una cuenta
+        operationID: deleteAccount
+        parameters:
+        - name: user
+          in: path
+          description: Username of account to delete
+          required: true
+          schema: 
+            type: string
+          example: user123
+        responses:
+        '200':
+          description: successful operation
+        '400':
+          description: Invalid user supplied
+        '404':
+          description: User not found
+      put:
+        tags:
+        - Accounts
+        summary: Actualiza una cuenta
+        description: Actualiza una cuenta
+        operationId: updateAccount
+        requestBody:
+          content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Accounts'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Accounts'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Accounts'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Accounts'          
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Accounts'
+        '400':
+          description: Invalid username supplied
+        '404':
+          description: Account not found
+        '422':
+          description: Validation exception
+    /accounts/{user}/diets:
+      get:
+        tags:
+        - Accounts
+        summary: Obteber caracteristicas de dietas por user
+        description: Obtener caracteristicas de dietas por user
+        operationID: getDietsByUser
+        responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Diets'          
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Diets'
+        '400':
+          description: Invalid status value
+      post:
+        tags:
+        - Accounts
+        summary: Crea una dieta
+        description: Crea una dieta
+        operationID: createDiet
+        requestBody:
+          content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Diets'
+              application/xml:
+                schema:
+                  $ref: '#/components/schemas/Diets'
+              application/x-www-form-urlencoded:
+                schema:
+                  $ref: '#/components/schemas/Diets'
+        required: true
+        responses:
+          '200':
+            description: Successful operation
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Diets'          
+              application/xml:
+                schema:
+                  $ref: '#/components/schemas/Diets'
+          '400':
+            description: Invalid input
+          '422':
+            description: Validation exception
+    /posts:
+      get:
+        tags:
+        - Posts
+        summary: Lista de publicaciones
+        description: Lista de publicaciones
+        operationId: listPosts
+        responses:
+        '200':
+          description: successful operation
+        '400':
+          description: Invalid status value
+      post:
+        tags:
+        - Posts
+        summary: Crea una publicación
+        description: Crea una publicación
+        operationId: createPost
+        requestBody:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Posts'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Posts'
+            application/x-www-form-urlencoded:
+              schema:
+                $ref: '#/components/schemas/Posts'
+            required: true
+          responses:
+            '200':
+              description: Successful operation
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/Posts'          
+                application/xml:
+                  schema:
+                    $ref: '#/components/schemas/Posts'
+            '400':
+              description: Invalid input
+            '422':
+              description: Validation exception
+    /posts/{user}:
+      get:
+        tags:
+        - Posts
+        summary: Obteber una publicación por user
+        description: Obtener una publicación por user
+        operationID: getPostByUser
+        responses:
+        '200':
+          description: successful operation
+        '400':
+          description: Invalid status value
+        '404':
+          description: User not found
+    /posts/{id}:
+      delete:
+        tags:
+        - Posts
+        summary: Elimina una publicación
+        description: Elimina una publicación
+        operationID: deletePost
+        parameters:
+        - name: id
+          in: path
+          description: ID of post to delete
+          required: true
+          schema: 
+            type: integer
+            format: int64
+          example: user123
+        responses:
+        '200':
+          description: successful operation
+        '400':
+          description: Invalid user supplied
+        '404':
+          description: User not found
+      put:
+        tags:
+        - Posts
+        summary: Actualiza una publicación
+        description: Actualiza una publicación
+        operationID: updatePost
+        parameters:
+        - name: id
+          in: path
+          description: ID of post to update
+          required: true
+          schema: 
+            type: integer
+            format: int64
+        requestBody:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Posts'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Posts'
+            application/x-www-form-urlencoded:
+              schema:
+                $ref: '#/components/schemas/Posts'
+
+components:
+  schemas:
+    Accounts:
+      type: object
+      properties:
+        id:
+          type: integer
+        user:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        id: 1
+        user: user123
+        email: user123@example.com
+        password: password123
+    Diets:
+      type: object
+      properties:
+        sex:
+          type: string
+        age:
+          type: integer
+          format: int64
+        weight:
+          type: integer
+          format: int64
+        height:
+          type: integer
+          format: int64
+        IMC:
+          type: integer
+          format: int64
+        foods:
+          type: array
+          items:
+            type: string
+      example:
+        sex: Male
+        age: 25
+        weight: 70
+        height: 170
+        IMC: 22
+        foods:
+          - Apple
+          - Banana
+          - Orange
+    

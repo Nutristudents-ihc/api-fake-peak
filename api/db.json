@@ -1,19 +1,91 @@
 {
   "accounts": [
     {
-      "id": 1,
-      "user": "user123",
-      "email": "user123@gmail.com",
-      "password": "contrasena123456"
+      "id": 2,
+      "user": "salvadordiazzz",
+      "email": "sdiaz.aguirre2003@gmail.com",
+      "pass": "$2b$10$pfIF4LkEn7ooOehoRTuLw.0KnSliHQOg3uaYwnJDOAEWMQJwrSvBO",
+      "bio": "me gusta jugar minecraft",
+      "_id": "8abae54a-9214-4200-b37f-8029da0cb9a2"
     },
     {
       "id": 2,
       "user": "aksoonie",
       "email": "aksoonie@gmail.com",
-      "pass": "asdjkasjdksadj12345"
+      "pass": "$2b$10$dkIKFxJWbxcb9tvlwtjRlOWCRjPdbTdEV3hgQdam5yMjThL7SMnna",
+      "bio": "",
+      "_id": "887fce59-c2c4-4d13-95a0-57e5ad925f24"
     }
   ],
-  "posts": [],
+  "posts": [
+    {
+      "id": 1,
+      "title": "holi",
+      "content": "boli",
+      "user": "aksoonie",
+      "user_id": "c4f58a11-b40b-4595-927a-dca8dd2d2259",
+      "comments": [],
+      "likes": 1,
+      "date": "2024-07-17T22:44:22.692Z",
+      "_id": "50dcd267-4ebd-4656-bb54-205faeadb2fb",
+      "liked_by": [
+        "c4f58a11-b40b-4595-927a-dca8dd2d2259"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "hola",
+      "content": "jejejeje",
+      "user": "salva",
+      "user_id": "8abae54a-9214-4200-b37f-8029da0cb9a2",
+      "comments": [],
+      "likes": 0,
+      "date": "2024-07-18T04:04:16.252Z",
+      "_id": "99df7372-54f3-44f6-af34-054635f804ec",
+      "liked_by": []
+    },
+    {
+      "id": 3,
+      "title": "nueva cuenta",
+      "content": "1",
+      "user": "aksoonie",
+      "user_id": "887fce59-c2c4-4d13-95a0-57e5ad925f24",
+      "comments": [
+        {
+          "id": "2d5a1baa-24d1-46f6-a4f8-b59009306b4c",
+          "idAuthor": "887fce59-c2c4-4d13-95a0-57e5ad925f24",
+          "author": "aksoonie",
+          "content": "mimor",
+          "date": "2024-07-20T01:51:47.260Z"
+        },
+        {
+          "id": "d6ee9403-7098-46a1-aa2d-8c194e739bfe",
+          "idAuthor": "887fce59-c2c4-4d13-95a0-57e5ad925f24",
+          "author": "aksoonie",
+          "content": "pepe",
+          "date": "2024-07-20T01:53:20.380Z"
+        },
+        {
+          "id": "098de37f-7328-49cf-8cf1-e67a195607b3",
+          "idAuthor": "887fce59-c2c4-4d13-95a0-57e5ad925f24",
+          "author": "aksoonie",
+          "content": "bebita",
+          "date": "2024-07-20T02:04:40.158Z"
+        },
+        {
+          "id": "eafb5df4-dd1e-44d9-8e73-e603f2cf3bda",
+          "idAuthor": "887fce59-c2c4-4d13-95a0-57e5ad925f24",
+          "author": "aksoonie",
+          "content": "holi",
+          "date": "2024-07-20T02:06:33.102Z"
+        }
+      ],
+      "likes": 0,
+      "date": "2024-07-20T00:01:48.176Z",
+      "_id": "d1975ffd-f254-4460-a058-8a97366f9bdb",
+      "liked_by": []
+    }
+  ],
   "dietas": [
     {
       "sexo": "M",
@@ -41,5 +113,5 @@
     }
   ],
   "recetas": [],
-  "objetivos":[]
+  "objetivos": []
 }
